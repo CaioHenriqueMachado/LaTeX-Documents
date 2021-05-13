@@ -2,10 +2,15 @@
 
 \subsection{Protocolo}
 
-O protocolo utilizado foi baseado na metodologia de Amplificação-MutaçãoSeleção (AMS) onde os processos de amplificação e mutação eram representados pelo PCR e a seleção era representada pelo próprio SELEX que buscava sequências de afinidade. Os códigos foram desenvolvidos em Python por questão de facilidade em
+O protocolo utilizado foi baseado na metodologia de Amplificação-Mutação-Seleção "AMS" (figura \ref{fig:fluxograma-principal}) onde os processos de amplificação e mutação eram representados pelo PCR e a seleção era representada pelo próprio SELEX que buscava sequências de afinidade. Os códigos foram desenvolvidos em Python por questão de facilidade em
 tratamento de “strings”, pois eram assim que as moléculas eram representadas, outra questão era a facilidade em desenvolver gráficos para o fácil entendimento e comportamento das moléculas.
 
-% AQUI TEM UMA IMAGEM
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=10cm]{figures/img-fluxo1.png}
+    \caption{Fluxograma principal}
+    \label{fig:fluxograma-principal}
+\end{figure}
 
 As primeiras etapas do ciclo eram amplificação e mutação, etapas essas que eram
 feitas em somente um passo. O PCR com erro (PCR error prone) era processo que
@@ -41,12 +46,26 @@ ou não a seleção, na pesquisa essa sequência de bases são chamadas de seque
 conservadas, alvos ou filtro. A intenção das sequências é mimetizar um vírus ou proteína
 e ver o quão forte ela é na seleção natural.
 
+
 \subsection{Código}
 
-O fluxo do programa desenvolvido para os cenários 1, 2 e 3 estão representados nas
-figuras abaixo:
+O fluxo do programa desenvolvido para os cenários 1, 2 e 3 estão representados nas figuras abaixo:
 
-% IMAGEM
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=10cm]{figures/img-fluxo2.png}
+    \caption{Fluxograma das simulações dos cenários 1 e 2.}
+    \label{fig:fluxograma-cen1-cen2}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=14cm]{figures/img-fluxo3.png}
+    \caption{Fluxograma da simulação do cenário 3.}
+    \label{fig:fluxograma-cen3}
+\end{figure}
 
 O código foi desenvolvido em Python e contém 5 classes. Sendo elas:\\
 \textbf{Class\_RNA.py}, \textbf{Class\_Filtro.py}, \textbf{Class\_Equação.py}, \textbf{Class\_Entropia.py} e
@@ -95,9 +114,12 @@ por distância da molécula replicada com a original, ou seja, caso uma molécul
 
 10\% de diferença da sua descendente, ela tem 10\% de chance morrer. A eficiência \textbf{Beta}
 se refere a probabilidade que uma molécula não-afim sobreviver ao filtro. Lembrando que
-para sabe o valor da afinidade foi executada a equação:
+para sabe o valor da afinidade foi executada a equação \ref{equation-mols}:
 
-% EQUAÇÃO
+\begin{equation}
+    \label{equation-mols}
+    Aff = \frac{\text{Mol. afins}}{\text{Total de moléculas}}
+\end{equation}
 
 A classe Equação tem o intuito de trazer uma equação modelada para o cenário 1
 com intenção de mostrar os resultados do método calculado e simulado para uma

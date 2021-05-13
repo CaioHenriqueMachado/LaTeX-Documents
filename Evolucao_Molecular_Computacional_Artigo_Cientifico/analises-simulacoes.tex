@@ -13,40 +13,131 @@ bases onde a sequência era escolhida aleatoriamente no início.
 
 \subsubsection{Variando a taxa de mutação}
 
-% 3 IMAGENS
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image1_alpha00_beta_20.png}
+    \caption{Cenário 1- Taxa de mutação 0\%.}
+    \label{fig:image1_alpha00_beta_20}
+\end{figure}
 
-Como pode-se reparar, ao observar as figuras 4-7 podemos perceber que o único
-momento em que a afinidade bate 100\% a simulação tem 0\% de mutação e que com
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image2_alpha05_beta_20.png}
+    \caption{Cenário 1- Taxa de mutação 5\%.}
+    \label{fig:image2_alpha05_beta_20}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image3_alpha10_beta_20.png}
+    \caption{Cenário 1- Taxa de mutação 10\%.}
+    \label{fig:image3_alpha10_beta_20}
+\end{figure}
+
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image4_alpha20_beta_20.png}
+    \caption{Cenário 1- Taxa de mutação 20\%.}
+    \label{fig:image4_alpha20_beta_20}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/affinity_mutation.png}
+    \caption{Relação entre afinidade e taxa de mutação.}
+    \label{fig:affinity_mutation}
+\end{figure}
+
+\newpage
+Como pode-se reparar, ao observar as figuras \ref{fig:image1_alpha00_beta_20}-\ref{fig:image4_alpha20_beta_20} podemos perceber que o único momento em que a afinidade bate 100\% a simulação tem 0\% de mutação e que com
 somente 5\% de mutação, a afinidade fica em média de 60\% mostrando que a porcentagem
-de afinidade é muito sensível a mutação. Na figura 8 temos uma referência que a partir
+de afinidade é muito sensível a mutação. Na figura \ref{fig:affinity_mutation} temos uma referência que a partir
 de 20\% de mutação a afinidade fica menor que 10\% se tornando mínima a quantidade de
 moléculas aptas ao filtro.
 
 \subsubsection{Variando a eficiência do filtro}
 
-% IMAGENS
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image9_alpha05_beta_90.png}
+    \caption{Eficiência de filtro 90\%.}
+    \label{fig:image9_alpha05_beta_90}
+\end{figure}
 
-Com bases nas figuras 9-13, pode-se perceber que a afinidade se decai muito
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image8_alpha05_beta_80.png}
+    \caption{Eficiência de filtro 80\%.}
+    \label{fig:image8_alpha05_beta_80}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image7_alpha05_beta_50.png}
+    \caption{Eficiência de filtro 50\%.}
+    \label{fig:image7_alpha05_beta_50}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image6_alpha05_beta_10.png}
+    \caption{Eficiência de filtro 10\%.}
+    \label{fig:image6_alpha05_beta_10}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image5_alpha05_beta_00.png}
+    \caption{Eficiência de filtro 0\%.}
+    \label{fig:image5_alpha05_beta_0}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/affinity_filter.png}
+    \caption{Relação entre afinidade e eficiência de filtro.}
+    \label{fig:affinity_filter}
+\end{figure}
+
+\newpage
+Com bases nas figuras \ref{fig:image9_alpha05_beta_90}-\ref{fig:image5_alpha05_beta_0}, pode-se perceber que a afinidade se decai muito
 quando é menor que 20\% de eficiência de filtro, acima desse valor tanto a afinidade
 quanto a quantidade de moléculas não são tão sensíveis caso tenha uma mudança mínima
 de eficiência. Qualquer valor acima de 20\% seria um bom valor para a simulação. 
 
+\subsubsection{Presença de 2 filtros}
 
-% IMAGEM
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image14_alpha05_beta_1de20_e_2de10.png}
+    \caption{Comparação entre 1 filtro de 20\%  e 2 filtros de 10\%}
+    \label{fig:image14_alpha05_beta_1de20_e_2de10}
+\end{figure}
+\newpage
 
 A intenção dessa simulação foi mostrar que não tem tanta diferença em
 acrescentar mais filtros se eles forem iguais (buscarem a mesma sequência) pois basta
-aumentar a força do filtro que você tem em mãos, na figura 14 pode-se perceber que os
-valores são idênticos. 
+aumentar a força do filtro que você tem em mãos, na figura \ref{fig:image14_alpha05_beta_1de20_e_2de10} pode-se perceber que os valores são idênticos. 
 
 \subsubsection{Equação modelada}
 
-Q(t) = Quantidade de moléculas no tempo “t” (ciclo ou round);\\ 
-% \alpha = Taxa de mutação;\\
-% \beta = Taxa de eficiência de filtro;\\
-NA= Quantidade de moléculas afins;\\
-NB= Quantidade de moléculas não-afins;\\
-Diff= Corte na quantidade de moléculas;
+% EQUAÇÕES
+
+
+\begin{flushleft}
+\begin{tabular}{l|l}
+Q(t)     & Quantidade de moléculas no tempo “t” (ciclo ou round) \\
+$\alpha$ & Taxa de mutação\\
+$\beta$  &Taxa de eficiência de filtro\\
+$N_A$       & Quantidade de moléculas afins\\
+$N_B$       & Quantidade de moléculas não-afins\\
+Diff        & Corte na quantidade de moléculas\\
+\end{tabular}
+\end{flushleft}
+
+\vspace{.5cm}
+
 
 % IMAGEM
 
@@ -104,7 +195,8 @@ seu complemento seria TTAAC) com 10\% de chance de junção.
 
 \subsubsection{Variando a taxa de mutação}
 
-% IMAGENS
+% IMGANES
+
 
 Após análise das figuras 22-25 é perceptível foi um avanço na questão da quebra
 e junção estarem bem mais suave no decorrer da simulação, porém podemos perceber
