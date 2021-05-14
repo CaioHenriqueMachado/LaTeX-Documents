@@ -122,8 +122,24 @@ aumentar a força do filtro que você tem em mãos, na figura \ref{fig:image14_a
 
 \subsubsection{Equação modelada}
 
-% EQUAÇÕES
+\begin{equation}
+    Q(t) = ( 1 - diff_i )[N_A + (1 - \alpha )N_A + N_B + 2N_B + \alfa N_A]
+\end{equation}
+Onde:
+\begin{equation}
+    diff = \left\{\begin{matrix}
+        0
+        &\hbox{, se popMax }\geq Q_{t + \frac{1}{2}}\\ 
+        \frac{Q_{t + \frac{1}{2} - popMax}}{Q_{t + \frac{1}{2}}}
+        &\hbox{, se popMax }< Q_{t + \frac{1}{2}}
+    \end{matrix}\right.
+\end{equation}
+e
+\begin{equation}
+    Q_{t + \frac{1}{2}\ =\ 2(N_A + N_B)}
+\end{equation}
 
+\vspace{1cm}
 
 \begin{flushleft}
 \begin{tabular}{l|l}
@@ -136,10 +152,13 @@ Diff        & Corte na quantidade de moléculas\\
 \end{tabular}
 \end{flushleft}
 
-\vspace{.5cm}
-
-
-% IMAGEM
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm,height=6cm]{figures/img-calculated-simulated.png}
+    \caption{Cenário 1- Comparando método Simulado com Calculado.}
+    \label{fig:img-calculated-simulated}
+\end{figure}
+\newpage
 
 Esse foi sem dúvidas o melhor resultado dos cenários, tanto a afinidade quanto a
 quantidade de moléculas são bem parecidas, foi testado com a eficiência de filtro 40\% e
@@ -166,13 +185,54 @@ sequência afim fosse AATTG seu complemento seria TTAAC) com 100\% de chance de 
 
 \subsubsection{Variando a taxa de mutação}
 
-% IMAGENS
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm,height=7cm]{figures/image15_alpha00_beta_20.png}
+    \caption{Cenário 2- Taxa de mutação 0\%.}
+    \label{fig:image15_alpha00_beta_20}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm,height=7cm]{figures/image16_alpha05_beta_20.png}
+    \caption{Cenário 2 - Taxa de mutação 5\%.}
+    \label{fig:image16_alpha05_beta_20}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm,height=7cm]{figures/image17_alpha10_beta_20.png}
+    \caption{Cenário 2 - Taxa de mutação 10\%.}
+    \label{fig:image17_alpha10_beta_20}
+\end{figure}
+
+\newpage
 
 \subsubsection{Variando a eficiência do filtro}
 
-% IMAGENS
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image18_alpha05_beta_20.png}
+    \caption{Cenário 2- Eficiência de filtro 20\%.}
+    \label{fig:image18_alpha05_beta_20}
+\end{figure}
 
-As figuras 16-21 sobre o cenário 2 mostram que o tamanho médio das moléculas
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image19_alpha05_beta_40.png}
+    \caption{Cenário 2- Eficiência de filtro 40\%.}
+    \label{fig:image19_alpha05_beta_40}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image20_alpha05_beta_90.png}
+    \caption{Cenário 2- Eficiência de filtro 90\%.}
+    \label{fig:image20_alpha05_beta_90}
+\end{figure}
+\newpage
+
+As figuras \ref{fig:image18_alpha05_beta_20}-\ref{fig:image20_alpha05_beta_90} sobre o cenário 2 mostram que o tamanho médio das moléculas
 junto a quantidade de moléculas nunca se mostrava preciso a cada simulação e bem
 instável ao decorrer dos ciclos, mostrando assim, que não foi escolhido o melhor método
 para simulação.
@@ -195,10 +255,38 @@ seu complemento seria TTAAC) com 10\% de chance de junção.
 
 \subsubsection{Variando a taxa de mutação}
 
-% IMGANES
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image21_alpha01_beta_10.png}
+    \caption{Cenário 3- Taxa de mutação 1\%.}
+    \label{fig:image21_alpha01_beta_10}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image22_alpha02_beta_10.png}
+    \caption{Cenário 3- Taxa de mutação 2\%.}
+    \label{fig:image22_alpha02_beta_10}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image23_alpha05_beta_10.png}
+    \caption{Cenário 3- Taxa de mutação 5\%.}
+    \label{fig:image23_alpha05_beta_10}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/image24_alpha10_beta_10.png}
+    \caption{Cenário 3- Taxa de mutação 10\%.}
+    \label{fig:image24_alpha10_beta_10}
+\end{figure}
+
+\newpage
 
 
-Após análise das figuras 22-25 é perceptível foi um avanço na questão da quebra
+Após análise das figuras \ref{fig:image21_alpha01_beta_10}-\ref{fig:image24_alpha10_beta_10} é perceptível foi um avanço na questão da quebra
 e junção estarem bem mais suave no decorrer da simulação, porém podemos perceber
 pelo tamanho das moléculas que cada vez mais iam diminuindo lentamente após a
 instabilidade dos 100 primeiros ciclos, podemos tirar como conclusão 2 grandes
